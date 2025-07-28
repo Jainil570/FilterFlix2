@@ -1,0 +1,18 @@
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Java / Eclipse / Tomcat
+.classpath
+.project
+.settings/
+target/
+build/
+*.class
+*.war
+*.ear
+
+# OS files
+.DS_Store
+Thumbs.db
