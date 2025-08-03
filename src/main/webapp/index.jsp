@@ -535,7 +535,7 @@
 
     <script>
         // Global variables
-        const FLASK_SERVER_URL = 'http://localhost:5000';
+        const FLASK_SERVER_URL = 'https://filterflix.onrender.com';
         const userId = crypto.randomUUID();
         
         // DOM elements

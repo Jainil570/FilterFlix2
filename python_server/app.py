@@ -15,7 +15,7 @@ from lipstick_filter import apply_lipstick_filter
 from crown_filter import apply_crown_filter
 
 app = Flask(__name__)
-CORS(app, origins=["http://localhost:8080", "http://127.0.0.1:8080"], supports_credentials=True)
+CORS(app, origins="https://filterflix-frontend.onrender.com", supports_credentials=True)
 
 # Setup capture directory
 CAPTURES_DIR = os.path.join(os.path.dirname(__file__), 'captures')
