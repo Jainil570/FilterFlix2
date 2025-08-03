@@ -1,0 +1,6 @@
+Flask
+Flask-Cors
+opencv-python-headless  # Use the headless version for servers
+mediapipe
+numpy
+gunicorn  
