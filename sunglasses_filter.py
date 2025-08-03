@@ -25,43 +25,72 @@ def load_image(filename):
 sunglasses_img = load_image('sunglasses.png')
 
 # --- Helper Functions ---
-def overlay_transparent(background, overlay, x, y):
-    bg_h, bg_w, _ = background.shape
-    h, w, _ = overlay.shape
-    x1, y1 = max(x, 0), max(y, 0)
-    x2, y2 = min(x + w, bg_w), min(y + h, bg_h)
-    if x2 <= x1 or y2 <= y1: return background
-    overlay_x1, overlay_y1 = max(0, -x), max(0, -y)
-    overlay_x2, overlay_y2 = overlay_x1 + (x2 - x1), overlay_y1 + (y2 - y1)
-    alpha = overlay[overlay_y1:overlay_y2, overlay_x1:overlay_x2, 3] / 255.0
-    mask = np.dstack([alpha] * 3)
-    roi = background[y1:y2, x1:x2]
-    blended_roi = (1.0 - mask) * roi + mask * overlay[overlay_y1:overlay_y2, overlay_x1:overlay_x2, :3]
-    background[y1:y2, x1:x2] = blended_roi.astype(np.uint8)
+def overlay_transparent(background, overlay, x, y, overlay_size=None):
+    bg_h, bg_w = background.shape[:2]
+    if overlay_size:
+        overlay = cv2.resize(overlay, overlay_size)
+    h, w = overlay.shape[:2]
+    if x < 0 or y < 0 or x + w > bg_w or y + h > bg_h:
+        return background
+    overlay_image = overlay[..., :3]
+    mask = overlay[..., 3:] / 255.0
+    background[y:y+h, x:x+w] = (1.0 - mask) * background[y:y+h, x:x+w] + mask * overlay_image
     return background
 
 def rotate_image(image, angle):
+    """Rotate image (with alpha) around its center, using a larger canvas to avoid cropping."""
     h, w = image.shape[:2]
-    center = (w // 2, h // 2)
+    canvas_size = (max(h, w) * 2, max(h, w) * 2, 4)
+    canvas = np.zeros(canvas_size, dtype=np.uint8)
+    y_offset = (canvas.shape[0] - h) // 2
+    x_offset = (canvas.shape[1] - w) // 2
+    canvas[y_offset:y_offset+h, x_offset:x_offset+w] = image
+    center = (canvas.shape[1] // 2, canvas.shape[0] // 2)
     M = cv2.getRotationMatrix2D(center, angle, 1.0)
-    return cv2.warpAffine(image, M, (w, h), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0,0,0,0))
+    rotated = cv2.warpAffine(canvas, M, (canvas.shape[1], canvas.shape[0]), flags=cv2.INTER_LINEAR, borderMode=cv2.BORDER_CONSTANT, borderValue=(0,0,0,0))
+    return rotated  # No cropping!
 
 # --- Main Filter Function ---
 def apply_sunglasses_filter(frame):
     image_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
     results = face_mesh.process(image_rgb)
+    
     if results.multi_face_landmarks:
         for face_landmarks in results.multi_face_landmarks:
             h, w, _ = frame.shape
-            left_eye, right_eye = face_landmarks.landmark[33], face_landmarks.landmark[263]
-            x1, y1, x2, y2 = int(left_eye.x * w), int(left_eye.y * h), int(right_eye.x * w), int(right_eye.y * h)
-            center_x, center_y = int((x1 + x2) / 2), int((y1 + y2) / 2)
+            
+            # Sunglasses position: use eye corners
+            left_eye = face_landmarks.landmark[33]
+            right_eye = face_landmarks.landmark[263]
+            x1, y1 = int(left_eye.x * w), int(left_eye.y * h)
+            x2, y2 = int(right_eye.x * w), int(right_eye.y * h)
+            
+            # Calculate center position with slight downward shift (like in original)
+            center_x = int((x1 + x2) / 2)
+            center_y = int((y1 + y2) / 2) + int(abs(x2 - x1) * 0.1)  # Shift sunglasses down slightly
+            
+            # Calculate sunglasses size
             glasses_width = int(abs(x2 - x1) * 1.8)
+            glasses_height = int(glasses_width * sunglasses_img.shape[0] / sunglasses_img.shape[1])
+            
+            # Calculate rotation angle
             angle = -math.degrees(math.atan2(y2 - y1, x2 - x1))
-            aspect_ratio = sunglasses_img.shape[0] / sunglasses_img.shape[1]
-            glasses_height = int(glasses_width * aspect_ratio)
-            resized_glasses = cv2.resize(sunglasses_img, (glasses_width, glasses_height))
+            
+            # Resize and rotate the sunglasses
+            resized_glasses = cv2.resize(sunglasses_img, (glasses_width, glasses_height), interpolation=cv2.INTER_AREA)
             rotated_glasses = rotate_image(resized_glasses, angle)
+            
+            # Calculate new position after rotation
             rh, rw = rotated_glasses.shape[:2]
-            frame = overlay_transparent(frame, rotated_glasses, center_x - rw // 2, center_y - rh // 2)
+            overlay_x = center_x - rw // 2
+            overlay_y = center_y - rh // 2
+            
+            # Overlay the rotated sunglasses
+            frame = overlay_transparent(
+                frame,
+                rotated_glasses,
+                overlay_x,
+                overlay_y
+            )
+    
     return frame
