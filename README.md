@@ -2,6 +2,9 @@ FilterFlix: Real-Time AR Video Filter Engine
 ![captured_photo_0004](https://github.com/user-attachments/assets/9ca51edc-4347-4fec-91a3-42686838375d)
 ![captured_photo_0003](https://github.com/user-attachments/assets/9740ebf8-57f5-46d5-8d9c-d70e340b0b35)
 <img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/9209a5f6-e67f-4b56-a391-202c5f3d47e0" />
+<img width="1349" height="610" alt="image" src="https://github.com/user-attachments/assets/b36d62c5-31f2-4b35-ab3c-378717198590" />
+<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/030eb196-d0a7-4887-b935-3e12d023dbe2" />
+
 
 <img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/33f9a240-2c54-4ed0-be04-0b608203a536" />
 
