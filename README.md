@@ -1,6 +1,6 @@
 FilterFlix: Real-Time AR Video Filter Engine
 
-![captured_photo_0003](https://github.com/user-attachments/assets/9740ebf8-57f5-46d5-8d9c-d70e340b0b35)
+
 
 
 <img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/030eb196-d0a7-4887-b935-3e12d023dbe2" />
@@ -27,7 +27,7 @@ Face Detection & Mesh Generation
 Filter Application
 
 High-fidelity facial landmarks detected by MediaPipe.
-
+![captured_photo_0003](https://github.com/user-attachments/assets/9740ebf8-57f5-46d5-8d9c-d70e340b0b35)
 Geometric transformations applied to overlay AR assets.
 
 ![captured_photo_0004](https://github.com/user-attachments/assets/9ca51edc-4347-4fec-91a3-42686838375d)
