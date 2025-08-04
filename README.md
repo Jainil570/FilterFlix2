@@ -1,9 +1,4 @@
-FilterFlix: Real-Time AR Video Filter Engine
-
-
-
-
-<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/030eb196-d0a7-4887-b935-3e12d023dbe2" />
+# FilterFlix: Real-Time AR Video Filter Engine
 
 
 <img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/33f9a240-2c54-4ed0-be04-0b608203a536" />
@@ -18,7 +13,8 @@ Visual Showcase
 <br>
 <img width="1349" height="610" alt="image" src="https://github.com/user-attachments/assets/b36d62c5-31f2-4b35-ab3c-378717198590" />
 </p>
-
+<br>
+<img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/030eb196-d0a7-4887-b935-3e12d023dbe2" />
 The Technology in Action
 The core of FilterFlix is its ability to accurately map facial landmarks and apply transformations in real time.
 
@@ -45,13 +41,13 @@ Crown
 
 Lipstick
 
-<img src="[Your Sunglasses Filter Screenshot]" alt="Sunglasses Filter" width="200"/>
+<img src="![capture_3_20250804_151656](https://github.com/user-attachments/assets/5dd12e1c-723c-4256-b8bd-9da6506d954b)" alt="Sunglasses Filter" width="200"/>
 
-<img src="[Your Puppy Filter Screenshot]" alt="Puppy Filter" width="200"/>
+<img src="![capture_3](https://github.com/user-attachments/assets/19a6f347-a8b9-4586-a18b-e634a60dd523)" alt="Puppy Filter" width="200"/>
 
-<img src="[Your Crown Filter Screenshot]" alt="Crown Filter" width="200"/>
+<img src="![capture_1_20250804_151605](https://github.com/user-attachments/assets/7c97ad98-b216-4aa7-b990-b70e207c654d)" alt="Crown Filter" width="200"/>
 
-<img src="[Your Lipstick Filter Screenshot]" alt="Lipstick Filter" width="200"/>
+<img src="![capture_1](https://github.com/user-attachments/assets/50098059-d232-480d-a686-5c703f387f74)" alt="Lipstick Filter" width="200"/>
 
 Core Features
 Real-Time Video Processing: Ingests a video stream and applies complex filters frame-by-frame with minimal latency.
