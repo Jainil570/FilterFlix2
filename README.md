@@ -1,8 +1,8 @@
 FilterFlix: Real-Time AR Video Filter Engine
-![captured_photo_0004](https://github.com/user-attachments/assets/9ca51edc-4347-4fec-91a3-42686838375d)
+
 ![captured_photo_0003](https://github.com/user-attachments/assets/9740ebf8-57f5-46d5-8d9c-d70e340b0b35)
-<img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/9209a5f6-e67f-4b56-a391-202c5f3d47e0" />
-<img width="1349" height="610" alt="image" src="https://github.com/user-attachments/assets/b36d62c5-31f2-4b35-ab3c-378717198590" />
+
+
 <img width="1353" height="609" alt="image" src="https://github.com/user-attachments/assets/030eb196-d0a7-4887-b935-3e12d023dbe2" />
 
 
@@ -16,7 +16,7 @@ Visual Showcase
 <p align="center">
 <em>Application Interface - Deployed on Render</em>
 <br>
-<img src="[Your Screenshot of the Website Here]" alt="FilterFlix Website" width="800"/>
+<img width="1349" height="610" alt="image" src="https://github.com/user-attachments/assets/b36d62c5-31f2-4b35-ab3c-378717198590" />
 </p>
 
 The Technology in Action
@@ -30,9 +30,9 @@ High-fidelity facial landmarks detected by MediaPipe.
 
 Geometric transformations applied to overlay AR assets.
 
-<img src="[Your Screenshot of Face Mesh Here]" alt="Face Mesh Landmarks" width="400"/>
+![captured_photo_0004](https://github.com/user-attachments/assets/9ca51edc-4347-4fec-91a3-42686838375d)
 
-<img src="[Your Screenshot of a Filter in Action Here]" alt="Filter Example" width="400"/>
+<img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/9209a5f6-e67f-4b56-a391-202c5f3d47e0" />
 
 Available Filters
 A collection of dynamically applied AR filters, each with unique positioning and scaling logic.
