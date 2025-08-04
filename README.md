@@ -12,7 +12,7 @@ FilterFlix is a high-performance web application that demonstrates a sophisticat
 
 
 
-Live Demo: [[Link to your deployed front-end on Render]](https://filterflix-frontend.onrender.com)
+Live Demo: [[link]](https://filterflix-frontend.onrender.com)
 
 
 
