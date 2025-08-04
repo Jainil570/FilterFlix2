@@ -41,13 +41,13 @@ Crown
 
 Lipstick
 
-<img src="![capture_3_20250804_151656](https://github.com/user-attachments/assets/5dd12e1c-723c-4256-b8bd-9da6506d954b)" alt="Sunglasses Filter" width="200"/>
+<img src="![capture_3_20250804_151656](https://github.com/user-attachments/assets/5dd12e1c-723c-4256-b8bd-9da6506d954b)"/>
 
-<img src="![capture_3](https://github.com/user-attachments/assets/19a6f347-a8b9-4586-a18b-e634a60dd523)" alt="Puppy Filter" width="200"/>
+<img src="![capture_3](https://github.com/user-attachments/assets/19a6f347-a8b9-4586-a18b-e634a60dd523)"/>
 
-<img src="![capture_1_20250804_151605](https://github.com/user-attachments/assets/7c97ad98-b216-4aa7-b990-b70e207c654d)" alt="Crown Filter" width="200"/>
+<img src="![capture_1_20250804_151605](https://github.com/user-attachments/assets/7c97ad98-b216-4aa7-b990-b70e207c654d)"/>
 
-<img src="![capture_1](https://github.com/user-attachments/assets/50098059-d232-480d-a686-5c703f387f74)" alt="Lipstick Filter" width="200"/>
+<img src="![capture_1](https://github.com/user-attachments/assets/50098059-d232-480d-a686-5c703f387f74)"/>
 
 Core Features
 Real-Time Video Processing: Ingests a video stream and applies complex filters frame-by-frame with minimal latency.
