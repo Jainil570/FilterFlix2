@@ -4,8 +4,6 @@
 
 
 
-<img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/33f9a240-2c54-4ed0-be04-0b608203a536" />
-
 
 
 FilterFlix is a high-performance web application that demonstrates a sophisticated microservices architecture for applying real-time, augmented reality (AR) filters to video streams. The system leverages a powerful Python back-end for intensive computer vision tasks and a decoupled Java front-end for user interaction, showcasing a modern approach to building complex, interactive media applications.
@@ -36,7 +34,7 @@ The Technology in Action
 
 The core of FilterFlix is its ability to accurately map facial landmarks and apply transformations in real time.
 
-
+<img width="640" height="515" alt="Screenshot 2025-07-25 133128" src="https://github.com/user-attachments/assets/33f9a240-2c54-4ed0-be04-0b608203a536" />
 
 Face Detection & Mesh Generation
 
