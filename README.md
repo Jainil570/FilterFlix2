@@ -302,8 +302,3 @@ Start the Tomcat server.
 
 Access the application in your browser, typically at https://filterflix-frontend.onrender.com
 
-
-
-
-
-give markdown
